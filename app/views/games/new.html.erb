@@ -1,0 +1,18 @@
+<div class="container">
+<h1>New game</h1>
+
+<ul class="letters">
+  <% @letters.each do |letter| %>
+    <li><%= letter %></li>
+  <% end %>
+</ul>
+
+<%= form_with url: score_path, method: :post, data: { turbo: false }, class: "form" do %>
+  <%= hidden_field_tag :letters, @letters.join(" ") %>
+
+  <%= label_tag :word, "What is the longest word you can find?" %>
+  <%= text_field_tag :word, nil, required: true %>
+
+  <%= submit_tag "Play" %>
+<% end %>
+</div>

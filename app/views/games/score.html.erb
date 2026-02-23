@@ -1,0 +1,11 @@
+<div class="container">
+<h1>Result</h1>
+
+<p><strong>Grid:</strong> <%= @letters.join(" ") %></p>
+<p><strong>Your word:</strong> <%= @word %></p>
+
+<p class="result-message"><%= @message %></p>
+<p class="score">Score: <%= @score %></p>
+
+<%= link_to "Play again", new_path %>
+</div>
